@@ -1,11 +1,12 @@
 import React from "react";
 
-function Navbar (){
 
 
+export default function Navbar(){
     return(
-        <div className='title'>
+        <header>
             <h1>Student Dashboard</h1>
-        </div>
+            <h2>If you see this, then you are fucking linked up Bredren</h2>
+        </header>
     )
 }
