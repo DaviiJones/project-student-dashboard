@@ -1,10 +1,45 @@
+import { MDBCollapse, MDBContainer, MDBIcon, MDBNavbar, MDBNavbarBrand, MDBNavbarItem, MDBNavbarLink, MDBNavbarNav, MDBNavbarToggler } from 'mdb-react-ui-kit';
+import React, { useState } from 'react';
 
-function App() {
+export default function App() {
+  const [showNavColor, setShowNavColor] = useState(false);
+  const [showNavColorSecond, setShowNavColorSecond] = useState(false);
+  const [showNavColorThird, setShowNavColorThird] = useState(false);
+
   return (
-    <div>
-      <h1>Student Dashboard</h1>
-    </div>
-  );
-}
-
-export default App;
+    <>
+      <MDBNavbar expand='lg' dark bgColor='primary'>
+        <MDBContainer fluid>
+          <MDBNavbarBrand href='#'>Navbar</MDBNavbarBrand>
+          <MDBNavbarToggler
+            type='button'
+            data-target='#navbarColor02'
+            aria-controls='navbarColor02'
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+            onClick={() => setShowNavColor(!showNavColor)}
+          >
+            <MDBIcon icon='bars' fas />
+          </MDBNavbarToggler>
+          <MDBCollapse show={showNavColor} navbar>
+            <MDBNavbarNav className='me-auto mb-2 mb-lg-0'>
+              <MDBNavbarItem className='active'>
+                <MDBNavbarLink aria-current='page' href='#'>
+                  Home
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink href='#'>Features</MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink href='#'>Pricing</MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink href='#'>About</MDBNavbarLink>
+              </MDBNavbarItem>
+            </MDBNavbarNav>
+          </MDBCollapse>
+        </MDBContainer>
+      </MDBNavbar>
+      </>
+)}
