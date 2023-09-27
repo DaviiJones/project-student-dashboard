@@ -1,0 +1,22 @@
+.cohortContainer {
+    margin-top: 80px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+button {
+    margin-bottom: 15px;
+    background-color: forestgreen;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
